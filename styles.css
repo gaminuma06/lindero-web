@@ -188,22 +188,23 @@ h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-0.02em;l
   font-family:'JetBrains Mono',monospace;color:var(--mint);font-weight:700;
   font-size:.85rem;display:block;margin-bottom:14px;
 }
-.step-icon{width:44px;height:44px;border-radius:12px;margin-bottom:16px}
 .step h3{font-size:1.08rem;font-weight:800;margin-bottom:8px}
 .step p{color:var(--muted);font-size:.92rem}
 .step-line{position:absolute;top:2px;left:26px;right:-24px;height:1px;background:linear-gradient(90deg,var(--mint),transparent)}
 .step:last-child .step-line{display:none}
 
 /* screenshots */
-.shots-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
-.shot-card{
-  border-radius:var(--radius);overflow:hidden;
-  border:1px solid var(--line);background:var(--surface);
-  transition:transform .45s var(--ease), border-color .45s;
+.shots-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:640px;margin-inline:auto}
+.shot-card{text-align:center}
+.shot-frame{
+  max-width:220px;margin:0 auto 20px;border-radius:26px;overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 30px 60px -24px rgba(0,0,0,0.6);
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
 }
-.shot-card:hover{transform:translateY(-6px);border-color:rgba(0,230,118,0.4)}
-.shot-card img{width:100%;display:block}
-.shot-card figcaption{padding:18px 22px;color:var(--muted);font-size:.94rem;font-weight:600}
+.shot-card:hover .shot-frame{transform:translateY(-6px) scale(1.02);box-shadow:0 36px 70px -20px rgba(0,230,118,0.25)}
+.shot-frame img{width:100%;display:block}
+.shot-card figcaption{color:var(--muted);font-size:.92rem;font-weight:600;max-width:220px;margin-inline:auto}
 
 /* audiences */
 .audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
