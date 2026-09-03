@@ -1,5 +1,24 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Hero screenshot carousel
+const carousel = document.getElementById('heroCarousel');
+if (carousel) {
+  const slides = carousel.querySelectorAll('.shot-slide');
+  const dots = carousel.querySelectorAll('.dot');
+  let current = 0;
+
+  setInterval(() => {
+    const next = (current + 1) % slides.length;
+    slides[current].classList.add('is-leaving');
+    slides[current].classList.remove('is-active');
+    slides[next].classList.add('is-active');
+    dots[current].classList.remove('is-active');
+    dots[next].classList.add('is-active');
+    setTimeout(() => slides[current].classList.remove('is-leaving'), 1000);
+    current = next;
+  }, 3600);
+}
+
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

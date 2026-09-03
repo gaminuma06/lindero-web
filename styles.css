@@ -112,7 +112,7 @@ h1 .accent{color:var(--yellow)}
 .reveal.d4{transition-delay:.32s}
 
 /* hero visual */
-.hero-visual{position:relative;aspect-ratio:1/1.05;justify-self:center;width:min(420px,100%)}
+.hero-visual{position:relative;aspect-ratio:9/16.5;justify-self:center;width:min(300px,78%)}
 .phone{
   position:relative;width:100%;height:100%;
   background:
@@ -156,6 +156,25 @@ h1 .accent{color:var(--yellow)}
 .pulse-node{animation:node-pulse 2s ease-in-out infinite}
 @keyframes node-pulse{0%,100%{r:7;opacity:1}50%{r:11;opacity:.4}}
 
+/* shot carousel (hero) */
+.shot-carousel{
+  position:relative;width:100%;height:100%;overflow:hidden;
+  border-radius:38px;border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 40px 80px -30px rgba(0,0,0,0.7), 0 0 0 1px rgba(0,0,0,.4);
+  background:#060a08;
+}
+.shot-slide{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transform:translateX(36px) scale(1.01);
+  transition:opacity 1s var(--ease), transform 1s var(--ease);
+  z-index:1;
+}
+.shot-slide.is-active{opacity:1;transform:translateX(0) scale(1);z-index:2}
+.shot-slide.is-leaving{opacity:0;transform:translateX(-36px) scale(1.01);z-index:1}
+.carousel-dots{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:7px;z-index:3}
+.carousel-dots .dot{width:6px;height:6px;border-radius:50%;background:rgba(244,247,244,0.35);transition:background .3s,width .3s}
+.carousel-dots .dot.is-active{background:var(--mint);width:18px;border-radius:4px}
+
 /* trust bar */
 .trust{padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .trust .container{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:center;color:var(--muted);font-weight:600;font-size:.92rem}
@@ -182,6 +201,12 @@ h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-0.02em;l
 /* how it works */
 .how{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step}
+.how-visual{
+  position:relative;aspect-ratio:1/1.05;width:min(320px,70%);
+  margin:0 auto 56px;
+}
+.how-visual .glow-orb.a{width:220px;height:220px}
+.how-visual .glow-orb.b{width:220px;height:220px}
 .step{position:relative;padding-top:8px}
 .step::before{
   counter-increment:step;content:counter(step,decimal-leading-zero);
