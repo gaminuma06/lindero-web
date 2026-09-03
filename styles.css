@@ -115,7 +115,10 @@ h1 .accent{color:var(--yellow)}
 .hero-visual{position:relative;aspect-ratio:1/1.05;justify-self:center;width:min(420px,100%)}
 .phone{
   position:relative;width:100%;height:100%;
-  background:radial-gradient(120% 120% at 30% 10%, #0e1712 0%, #060a08 70%);
+  background:
+    radial-gradient(120% 120% at 30% 10%, rgba(10,20,15,0.55) 0%, rgba(4,8,6,0.88) 70%),
+    url('assets/img/hero_mapa_tactico.png');
+  background-size:cover;background-position:center;
   border-radius:38px;border:1px solid rgba(255,255,255,0.08);
   box-shadow:0 40px 80px -30px rgba(0,0,0,0.7), 0 0 0 1px rgba(0,0,0,.4);
   overflow:hidden;

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lindero — Políticas de Privacidad y Términos</title>
+    <link rel="icon" href="../assets/img/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d2016;
+            --card-bg: #12261a;
+            --primary-color: #00e676;
+            --accent-color: #ffdc00;
+            --text-main: #f4f7f4;
+            --text-muted: #a9c2b2;
+            --border-color: rgba(244,247,244,0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px 60px;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; }
+
+        .back-link{
+            display:inline-flex;align-items:center;gap:8px;
+            color:var(--text-muted);text-decoration:none;font-size:.9rem;font-weight:500;
+            margin-bottom:32px;transition:color .25s;
+        }
+        .back-link:hover{color:var(--primary-color)}
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+        }
+
+        .logo {
+            font-family: 'Baloo 2', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .subtitle { font-size: 1.05rem; color: var(--text-muted); font-weight: 300; }
+
+        .last-update {
+            font-size: 0.82rem;
+            color: var(--primary-color);
+            margin-top: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 22px;
+            transition: border-color 0.3s ease;
+        }
+
+        .section-card:hover { border-color: rgba(0, 230, 118, 0.35); }
+
+        h2 {
+            font-family: 'Baloo 2', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 10px;
+        }
+
+        p { color: var(--text-muted); margin-bottom: 12px; font-size: 0.95rem; }
+
+        ul { list-style-type: none; margin-bottom: 12px; }
+
+        li {
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            position: absolute;
+            left: 0;
+            top: -4px;
+        }
+
+        .highlight { color: var(--accent-color); font-weight: 600; }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 26px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        footer p { margin-bottom: 5px; }
+
+        .contact-link { color: var(--primary-color); text-decoration: none; font-weight: 600; }
+        .contact-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back-link" href="../index.html">&larr; Volver a Lindero</a>
+
+        <header>
+            <div class="logo">Lindero</div>
+            <div class="subtitle">Políticas de Privacidad y Términos de Servicio Oficiales</div>
+            <div class="last-update">Última actualización: Julio 2026</div>
+        </header>
+
+        <main>
+            <div class="section-card">
+                <h2>1. Responsable del Tratamiento</h2>
+                <p>El titular, desarrollador y responsable de la aplicación <span class="highlight">Lindero</span> es Adán Arias (Contacto: <a href="mailto:ingarias9006@gmail.com" class="contact-link">ingarias9006@gmail.com</a>).</p>
+            </div>
+
+            <div class="section-card">
+                <h2>2. Recopilación y Uso de Datos</h2>
+                <ul>
+                    <li><strong>Ubicación Precisa (GPS):</strong> Lindero accede a la ubicación de tu dispositivo en tiempo real exclusivamente para posicionarte en el mapa y calcular distancias, perímetros o áreas de forma puramente local. Estos datos sensibles de geolocalización no se transmiten a ningún servidor externo, no se almacenan en la nube ni se comparten con terceros.</li>
+                    <li><strong>Acceso al Almacenamiento local:</strong> Se solicita permiso de lectura y escritura de archivos locales únicamente para permitir la importación, exportación, el guardado y la correcta calibración de tus mapas en formato GeoPDF, KML o Shapefile. No se analiza, recopila ni accede a ninguna otra información o archivo personal en tu dispositivo.</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h2>3. Servicios de Terceros y Privacidad</h2>
+                <p>Esta aplicación no contiene anuncios publicitarios, herramientas de seguimiento analítico de comportamiento (analytics) ni SDKs de terceros que recopilen información de identificación personal (PII). Tu actividad de navegación cartográfica es 100% privada.</p>
+            </div>
+
+            <div class="section-card">
+                <h2>4. Seguridad de la Información</h2>
+                <p>Toda la información cartográfica, capas de dibujo y configuraciones cargadas por el usuario se guardan localmente en el dispositivo. Adicionalmente, el perfil de licencia de los usuarios que activen planes se almacena de forma cifrada en los servidores de Firebase (Google Cloud). Puedes eliminar permanentemente tu cuenta y todos tus datos en cualquier momento desde la sección de Configuración de la app.</p>
+            </div>
+
+            <div class="section-card">
+                <h2>5. Suscripciones y Pagos Recurrentes</h2>
+                <p>Las compras y suscripciones de <span class="highlight">Lindero Pro</span> se gestionan de manera oficial mediante los servicios de Google Play Store.</p>
+                <ul>
+                    <li>Los cobros se facturan mensualmente a la tarifa aplicable a tu país de origen.</li>
+                    <li>La renovación es automática al final de cada periodo de facturación a menos que desactives la renovación automática en los ajustes de tu cuenta de Google Play Store al menos 24 horas antes del vencimiento.</li>
+                    <li>No se realizan reembolsos por periodos parciales ya facturados.</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h2>6. Códigos de Acceso y Promociones</h2>
+                <p>Los códigos únicos de activación, incluyendo códigos de acceso corporativo y promocionales, son personales, intransferibles y de <strong>único uso</strong>.</p>
+                <ul>
+                    <li>Un código solo puede estar asociado a una cuenta de usuario a la vez.</li>
+                    <li>El titular se reserva el derecho de revocar o modificar licencias si se detecta un uso indebido, compartido o fraudulento de los códigos.</li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h2>7. Modificaciones a los Términos</h2>
+                <p>El propietario se reserva el derecho de actualizar este documento para adaptarlo a nuevas regulaciones legales y mejoras del servicio. Los cambios se notificarán y actualizarán en esta dirección web oficial de manera oportuna.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2026 Lindero. Todos los derechos reservados.</p>
+            <p>Para consultas, soporte o reclamos, escribe a <a href="mailto:ingarias9006@gmail.com" class="contact-link">ingarias9006@gmail.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>
