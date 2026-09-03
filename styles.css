@@ -115,10 +115,7 @@ h1 .accent{color:var(--yellow)}
 .hero-visual{position:relative;aspect-ratio:9/16.5;justify-self:center;width:min(300px,78%)}
 .phone{
   position:relative;width:100%;height:100%;
-  background:
-    radial-gradient(120% 120% at 30% 10%, rgba(10,20,15,0.55) 0%, rgba(4,8,6,0.88) 70%),
-    url('assets/img/hero_mapa_tactico.png');
-  background-size:cover;background-position:center;
+  background:radial-gradient(120% 120% at 30% 10%, #0e1712 0%, #060a08 70%);
   border-radius:38px;border:1px solid rgba(255,255,255,0.08);
   box-shadow:0 40px 80px -30px rgba(0,0,0,0.7), 0 0 0 1px rgba(0,0,0,.4);
   overflow:hidden;
@@ -174,6 +171,11 @@ h1 .accent{color:var(--yellow)}
 .carousel-dots{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:7px;z-index:3}
 .carousel-dots .dot{width:6px;height:6px;border-radius:50%;background:rgba(244,247,244,0.35);transition:background .3s,width .3s}
 .carousel-dots .dot.is-active{background:var(--mint);width:18px;border-radius:4px}
+.carousel-caption{
+  text-align:center;margin-top:18px;color:var(--muted);font-size:.92rem;font-weight:600;
+  min-height:1.4em;opacity:1;transition:opacity .35s var(--ease);
+}
+.carousel-caption.is-fading{opacity:0}
 
 /* trust bar */
 .trust{padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -217,19 +219,6 @@ h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-0.02em;l
 .step p{color:var(--muted);font-size:.92rem}
 .step-line{position:absolute;top:2px;left:26px;right:-24px;height:1px;background:linear-gradient(90deg,var(--mint),transparent)}
 .step:last-child .step-line{display:none}
-
-/* screenshots */
-.shots-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:640px;margin-inline:auto}
-.shot-card{text-align:center}
-.shot-frame{
-  max-width:220px;margin:0 auto 20px;border-radius:26px;overflow:hidden;
-  border:1px solid rgba(255,255,255,0.08);
-  box-shadow:0 30px 60px -24px rgba(0,0,0,0.6);
-  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
-}
-.shot-card:hover .shot-frame{transform:translateY(-6px) scale(1.02);box-shadow:0 36px 70px -20px rgba(0,230,118,0.25)}
-.shot-frame img{width:100%;display:block}
-.shot-card figcaption{color:var(--muted);font-size:.92rem;font-weight:600;max-width:220px;margin-inline:auto}
 
 /* audiences */
 .audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}

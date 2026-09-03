@@ -2,6 +2,13 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 // Hero screenshot carousel
 const carousel = document.getElementById('heroCarousel');
+const caption = document.getElementById('heroCaption');
+const captions = [
+  'Tus mapas, disponibles aunque no haya cobertura.',
+  'Navega con confianza, incluso sin señal.',
+  'El sistema de coordenadas que usa Colombia.',
+  'Exporta cualquier capa a KML o Shapefile en dos toques.'
+];
 if (carousel) {
   const slides = carousel.querySelectorAll('.shot-slide');
   const dots = carousel.querySelectorAll('.dot');
@@ -15,6 +22,15 @@ if (carousel) {
     dots[current].classList.remove('is-active');
     dots[next].classList.add('is-active');
     setTimeout(() => slides[current].classList.remove('is-leaving'), 1000);
+
+    if (caption) {
+      caption.classList.add('is-fading');
+      setTimeout(() => {
+        caption.textContent = captions[next];
+        caption.classList.remove('is-fading');
+      }, 350);
+    }
+
     current = next;
   }, 3600);
 }
