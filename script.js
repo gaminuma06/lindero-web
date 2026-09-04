@@ -41,6 +41,21 @@ const flowPath = document.getElementById('flowPath');
 const flowDot = document.getElementById('flowDot');
 if (flowTrack && flowPath && flowDot) {
   const len = flowPath.getTotalLength();
+  const pins = Array.from(flowTrack.querySelectorAll('.flow-pin'));
+
+  // Find, for each pin, the fraction of the path length where the dot is closest to it
+  const pinThresholds = pins.map(pin => {
+    const target = { x: parseFloat(pin.dataset.x), y: parseFloat(pin.dataset.y) };
+    const steps = 400;
+    let best = 0, bestDist = Infinity;
+    for (let i = 0; i <= steps; i++) {
+      const l = (i / steps) * len;
+      const p = flowPath.getPointAtLength(l);
+      const d = (p.x - target.x) ** 2 + (p.y - target.y) ** 2;
+      if (d < bestDist) { bestDist = d; best = l / len; }
+    }
+    return best;
+  });
 
   const io2 = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -49,10 +64,20 @@ if (flowTrack && flowPath && flowDot) {
 
         let start = null;
         const duration = 7000;
+        let lastProgress = 1;
         function animateDot(ts) {
           if (!start) start = ts;
           const elapsed = (ts - start) % duration;
           const progress = elapsed / duration;
+
+          if (progress < lastProgress) {
+            pins.forEach(p => p.classList.remove('is-dropped'));
+          }
+          pins.forEach((pin, i) => {
+            if (progress >= pinThresholds[i]) pin.classList.add('is-dropped');
+          });
+          lastProgress = progress;
+
           const point = flowPath.getPointAtLength(progress * len);
           flowDot.style.left = (point.x / 1200 * 100) + '%';
           flowDot.style.top = (point.y / 130 * 100) + '%';

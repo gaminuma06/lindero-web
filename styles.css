@@ -234,18 +234,13 @@ h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-0.02em;l
 }
 .flow-track.in .flow-line path#flowPath{opacity:.85}
 
-.flow-pin{opacity:0;transform:scale(0);transform-origin:center;transform-box:fill-box}
+.flow-pin{
+  opacity:0;transform:scale(0) translateY(-4px);transform-origin:center;transform-box:fill-box;
+  transition:opacity .45s var(--ease), transform .45s cubic-bezier(.34,1.56,.64,1);
+}
 .flow-pin path{fill:var(--mint)}
 .flow-pin circle{fill:var(--ink-black)}
-.flow-track.in .flow-pin{
-  animation:pin-drop .6s var(--ease) forwards;
-  animation-delay:calc(.5s + var(--pd));
-}
-@keyframes pin-drop{
-  0%{opacity:0;transform:scale(0) translateY(-6px)}
-  60%{opacity:1;transform:scale(1.2) translateY(0)}
-  100%{opacity:1;transform:scale(1) translateY(0)}
-}
+.flow-pin.is-dropped{opacity:1;transform:scale(1) translateY(0)}
 
 .flow-dot{
   position:absolute;top:0;left:0;width:10px;height:10px;border-radius:50%;
