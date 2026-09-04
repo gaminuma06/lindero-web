@@ -35,6 +35,22 @@ if (carousel) {
   }, 3600);
 }
 
+// Coordinate chips: cycle highlight + sync readout text
+const chipList = document.getElementById('chipList');
+const coordReadout = document.getElementById('coordReadout');
+if (chipList && coordReadout) {
+  const chips = chipList.querySelectorAll('.chip');
+  let chipIndex = 0;
+  chips[0].classList.add('is-active');
+
+  setInterval(() => {
+    chips[chipIndex].classList.remove('is-active');
+    chipIndex = (chipIndex + 1) % chips.length;
+    chips[chipIndex].classList.add('is-active');
+    coordReadout.textContent = chips[chipIndex].dataset.coord;
+  }, 2200);
+}
+
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

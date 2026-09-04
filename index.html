@@ -126,20 +126,28 @@
         <span class="kicker">Cómo funciona</span>
         <h2>De la finca al archivo GIS, en cuatro pasos</h2>
       </div>
+      <div class="flow-track reveal" id="flowTrack">
+        <svg class="flow-line" viewBox="0 0 1200 4" preserveAspectRatio="none"><path d="M0 2 L1200 2"/></svg>
+        <span class="flow-dot"></span>
+      </div>
       <div class="steps">
-        <div class="step reveal"><div class="step-line"></div>
+        <div class="step reveal">
+          <div class="step-head"><span class="step-num">01</span><img class="step-icon-sm" src="assets/img/icon_geopdf.png" alt=""></div>
           <h3>Carga tu mapa</h3>
           <p>Importa un GeoPDF, mapa satelital o tu plano existente antes de salir a campo.</p>
         </div>
-        <div class="step reveal d1"><div class="step-line"></div>
+        <div class="step reveal d1">
+          <div class="step-head"><span class="step-num">02</span><img class="step-icon-sm" src="assets/img/icon_offline.png" alt=""></div>
           <h3>Navega sin señal</h3>
           <p>Ubícate por GPS sobre el mapa descargado, sin depender de datos móviles.</p>
         </div>
-        <div class="step reveal d2"><div class="step-line"></div>
+        <div class="step reveal d2">
+          <div class="step-head"><span class="step-num">03</span><img class="step-icon-sm" src="assets/img/icon_topografos.png" alt=""></div>
           <h3>Marca y mide</h3>
           <p>Traza linderos, calcula áreas y distancias, y anota puntos de interés en el terreno.</p>
         </div>
         <div class="step reveal d3">
+          <div class="step-head"><span class="step-num">04</span><img class="step-icon-sm" src="assets/img/icon_exportar.png" alt=""></div>
           <h3>Importa y exporta</h3>
           <p>Trae capas KML o Shapefile que ya tengas, o genera las tuyas y envíalas directo desde el celular a tu equipo o software GIS.</p>
         </div>
@@ -155,21 +163,27 @@
         <h2>Hecha para quienes trabajan la tierra, no para turistas</h2>
         <p>Lindero nace de necesidades reales de campo en Colombia, no de un caso de uso genérico.</p>
       </div>
-      <div class="audience-grid">
-        <div class="audience-card reveal">
+      <div class="audience-list">
+        <div class="audience-row reveal reveal-left">
           <img src="assets/img/icon_topografos.png" alt="Topógrafos y agrimensores">
-          <h3>Topógrafos y agrimensores</h3>
-          <p>Verifica linderos y coordenadas en el sistema oficial colombiano directo desde el terreno.</p>
+          <div>
+            <h3>Topógrafos y agrimensores</h3>
+            <p>Verifica linderos y coordenadas en el sistema oficial colombiano directo desde el terreno.</p>
+          </div>
         </div>
-        <div class="audience-card reveal d1">
+        <div class="audience-row reveal reveal-right">
           <img src="assets/img/icon_fincas.png" alt="Fincas y haciendas">
-          <h3>Fincas y haciendas</h3>
-          <p>Administra lotes, vías internas y áreas de cultivo sin depender de cobertura celular.</p>
+          <div>
+            <h3>Fincas y haciendas</h3>
+            <p>Administra lotes, vías internas y áreas de cultivo sin depender de cobertura celular.</p>
+          </div>
         </div>
-        <div class="audience-card reveal d2">
+        <div class="audience-row reveal reveal-left">
           <img src="assets/img/icon_contratistas.png" alt="Contratistas de vías y riego">
-          <h3>Contratistas de vías y riego</h3>
-          <p>Registra avances de obra, tramos de vía y sistemas de riego con coordenadas exactas.</p>
+          <div>
+            <h3>Contratistas de vías y riego</h3>
+            <p>Registra avances de obra, tramos de vía y sistemas de riego con coordenadas exactas.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -178,21 +192,21 @@
   <!-- COORDINATE SYSTEMS -->
   <section id="coordenadas">
     <div class="container">
-      <div class="coord-panel reveal">
-        <div>
+      <div class="coord-panel">
+        <div class="reveal">
           <span class="kicker">El detalle que importa</span>
           <h2>El sistema de coordenadas que de verdad se usa en Colombia</h2>
           <p>Ningún mapa genérico habla el idioma de un topógrafo colombiano. Lindero sí: cambia entre sistemas sin conversiones manuales ni errores de precisión.</p>
-          <div class="chip-list">
-            <span class="chip">Grados decimales (DD)</span>
-            <span class="chip">Grados y minutos (DM)</span>
-            <span class="chip">Grados, minutos y segundos (DMS)</span>
-            <span class="chip">UTM (WGS84)</span>
-            <span class="chip">Origen Nacional (EPSG:9377)</span>
-            <span class="chip">Magna-Sirgas Bogotá</span>
+          <div class="chip-list" id="chipList">
+            <span class="chip reveal" data-coord="8.6597218, -73.8370876">Grados decimales (DD)</span>
+            <span class="chip reveal d1" data-coord="8°39.583'N, 73°50.225'W">Grados y minutos (DM)</span>
+            <span class="chip reveal d2" data-coord="8°39'35&quot;N, 73°50'13&quot;W">Grados, minutos y segundos (DMS)</span>
+            <span class="chip reveal d3" data-coord="18N 379452E 958765N">UTM (WGS84)</span>
+            <span class="chip reveal d4" data-coord="N 958765.4, E 379452.1">Origen Nacional (EPSG:9377)</span>
+            <span class="chip reveal" data-coord="N 1050212.3, E 999875.6">Magna-Sirgas Bogotá</span>
           </div>
         </div>
-        <div class="coord-visual">
+        <div class="coord-visual reveal reveal-scale">
           <div class="glow-orb a"></div>
           <div class="glow-orb b"></div>
           <div class="phone">
@@ -215,7 +229,7 @@
               <text x="160" y="76" fill="#5ff0a8" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1">PARCELA_DEMO_042</text>
               <text x="205" y="308" fill="#a9c2b2" font-family="JetBrains Mono, monospace" font-size="9">ELEV: 142.5M</text>
             </svg>
-            <span class="coord-pill">8.6597218, −73.8370876</span>
+            <span class="coord-pill" id="coordReadout">8.6597218, -73.8370876</span>
           </div>
         </div>
       </div>
