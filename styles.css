@@ -70,7 +70,7 @@ header.site{
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(0,230,118,0.55)}
 
 /* hero */
-.hero{padding-top:clamp(56px,9vw,96px)}
+.hero{padding:clamp(24px,4vw,48px) 0 clamp(40px,6vw,72px)}
 .hero .container{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
