@@ -35,6 +35,40 @@ if (carousel) {
   }, 3600);
 }
 
+// Flow track: curved route line + dot walking along the real path
+const flowTrack = document.getElementById('flowTrack');
+const flowPath = document.getElementById('flowPath');
+const flowDot = document.getElementById('flowDot');
+if (flowTrack && flowPath && flowDot) {
+  const len = flowPath.getTotalLength();
+  flowPath.style.strokeDasharray = len;
+  flowPath.style.strokeDashoffset = len;
+
+  const io2 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        flowPath.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(.19,1,.22,1)';
+        flowPath.style.strokeDashoffset = '0';
+        io2.unobserve(entry.target);
+
+        let start = null;
+        const duration = 7000;
+        function animateDot(ts) {
+          if (!start) start = ts;
+          const elapsed = (ts - start) % duration;
+          const progress = elapsed / duration;
+          const point = flowPath.getPointAtLength(progress * len);
+          flowDot.style.left = (point.x / 1200 * 100) + '%';
+          flowDot.style.top = (point.y / 130 * 100) + '%';
+          requestAnimationFrame(animateDot);
+        }
+        setTimeout(() => requestAnimationFrame(animateDot), 1800);
+      }
+    });
+  }, { threshold: 0.2 });
+  io2.observe(flowTrack);
+}
+
 // Coordinate chips: cycle highlight + sync readout text
 const chipList = document.getElementById('chipList');
 const coordReadout = document.getElementById('coordReadout');

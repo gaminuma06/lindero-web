@@ -225,20 +225,34 @@ h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-0.02em;l
 
 /* how it works */
 .how{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.flow-track{position:relative;height:2px;margin-bottom:40px}
+.flow-track{position:relative;width:100%;aspect-ratio:1200/130;margin-bottom:8px}
 .flow-line{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.flow-line path{fill:none;stroke:var(--mint);stroke-width:2;stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 1.6s var(--ease)}
-.flow-track.in .flow-line path{stroke-dashoffset:0}
+.flow-line path#flowPath{
+  fill:none;stroke:var(--mint);stroke-width:2.5;stroke-linecap:round;
+  stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 1.8s var(--ease);
+}
+.flow-track.in .flow-line path#flowPath{stroke-dashoffset:0}
+
+.flow-pin{opacity:0;transform:scale(0);transform-origin:center;transform-box:fill-box}
+.flow-pin path{fill:var(--mint)}
+.flow-pin circle{fill:var(--ink-black)}
+.flow-track.in .flow-pin{
+  animation:pin-drop .6s var(--ease) forwards;
+  animation-delay:calc(1.6s + var(--pd));
+}
+@keyframes pin-drop{
+  0%{opacity:0;transform:scale(0) translateY(-6px)}
+  60%{opacity:1;transform:scale(1.2) translateY(0)}
+  100%{opacity:1;transform:scale(1) translateY(0)}
+}
+
 .flow-dot{
-  position:absolute;top:50%;left:0;width:9px;height:9px;border-radius:50%;
+  position:absolute;top:0;left:0;width:10px;height:10px;border-radius:50%;
   background:var(--mint);box-shadow:0 0 12px 3px rgba(0,230,118,.55);
-  transform:translate(-50%,-50%);opacity:0;transition:opacity .5s .8s;
+  transform:translate(-50%,-50%);opacity:0;transition:opacity .5s 1.8s;
+  pointer-events:none;
 }
-.flow-track.in .flow-dot{opacity:1;animation:flow-travel 4.5s ease-in-out infinite}
-@keyframes flow-travel{
-  0%{left:0%}
-  100%{left:100%}
-}
+.flow-track.in .flow-dot{opacity:1}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .step{position:relative}
 .step-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}

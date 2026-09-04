@@ -127,8 +127,26 @@
         <h2>De la finca al archivo GIS, en cuatro pasos</h2>
       </div>
       <div class="flow-track reveal" id="flowTrack">
-        <svg class="flow-line" viewBox="0 0 1200 4" preserveAspectRatio="none"><path d="M0 2 L1200 2"/></svg>
-        <span class="flow-dot"></span>
+        <svg class="flow-line" viewBox="0 0 1200 130" preserveAspectRatio="none">
+          <path id="flowPath" fill="none" d="M150,70 C250,35 350,35 450,40 C550,45 650,100 750,95 C850,90 950,45 1050,60" />
+          <g class="flow-pin" style="--pd:0s">
+            <path transform="translate(150,70) scale(0.6)" d="M0,0 C-8,-14 -14,-20 -14,-28 C-14,-36 -7,-42 0,-42 C7,-42 14,-36 14,-28 C14,-20 8,-14 0,0 Z"/>
+            <circle transform="translate(150,70) scale(0.6)" cx="0" cy="-28" r="6"/>
+          </g>
+          <g class="flow-pin" style="--pd:.15s">
+            <path transform="translate(450,40) scale(0.6)" d="M0,0 C-8,-14 -14,-20 -14,-28 C-14,-36 -7,-42 0,-42 C7,-42 14,-36 14,-28 C14,-20 8,-14 0,0 Z"/>
+            <circle transform="translate(450,40) scale(0.6)" cx="0" cy="-28" r="6"/>
+          </g>
+          <g class="flow-pin" style="--pd:.3s">
+            <path transform="translate(750,95) scale(0.6)" d="M0,0 C-8,-14 -14,-20 -14,-28 C-14,-36 -7,-42 0,-42 C7,-42 14,-36 14,-28 C14,-20 8,-14 0,0 Z"/>
+            <circle transform="translate(750,95) scale(0.6)" cx="0" cy="-28" r="6"/>
+          </g>
+          <g class="flow-pin" style="--pd:.45s">
+            <path transform="translate(1050,60) scale(0.6)" d="M0,0 C-8,-14 -14,-20 -14,-28 C-14,-36 -7,-42 0,-42 C7,-42 14,-36 14,-28 C14,-20 8,-14 0,0 Z"/>
+            <circle transform="translate(1050,60) scale(0.6)" cx="0" cy="-28" r="6"/>
+          </g>
+        </svg>
+        <span class="flow-dot" id="flowDot"></span>
       </div>
       <div class="steps">
         <div class="step reveal">
