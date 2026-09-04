@@ -187,8 +187,9 @@ h1 .accent{color:var(--yellow)}
 .carousel-dots .dot{width:6px;height:6px;border-radius:50%;background:rgba(244,247,244,0.35);transition:background .3s,width .3s}
 .carousel-dots .dot.is-active{background:var(--mint);width:18px;border-radius:4px}
 .carousel-caption{
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
   text-align:center;margin-top:18px;color:var(--muted);font-size:.92rem;font-weight:600;
-  min-height:2.7em;opacity:1;transition:opacity .35s var(--ease);
+  height:4.6em;line-height:1.4;opacity:1;transition:opacity .35s var(--ease);
 }
 .carousel-caption.is-fading{opacity:0}
 
