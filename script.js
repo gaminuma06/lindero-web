@@ -41,14 +41,10 @@ const flowPath = document.getElementById('flowPath');
 const flowDot = document.getElementById('flowDot');
 if (flowTrack && flowPath && flowDot) {
   const len = flowPath.getTotalLength();
-  flowPath.style.strokeDasharray = len;
-  flowPath.style.strokeDashoffset = len;
 
   const io2 = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        flowPath.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(.19,1,.22,1)';
-        flowPath.style.strokeDashoffset = '0';
         io2.unobserve(entry.target);
 
         let start = null;
@@ -62,7 +58,7 @@ if (flowTrack && flowPath && flowDot) {
           flowDot.style.top = (point.y / 130 * 100) + '%';
           requestAnimationFrame(animateDot);
         }
-        setTimeout(() => requestAnimationFrame(animateDot), 1800);
+        setTimeout(() => requestAnimationFrame(animateDot), 600);
       }
     });
   }, { threshold: 0.2 });

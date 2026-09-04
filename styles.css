@@ -187,7 +187,7 @@ h1 .accent{color:var(--yellow)}
 .carousel-dots .dot.is-active{background:var(--mint);width:18px;border-radius:4px}
 .carousel-caption{
   text-align:center;margin-top:18px;color:var(--muted);font-size:.92rem;font-weight:600;
-  min-height:1.4em;opacity:1;transition:opacity .35s var(--ease);
+  min-height:2.7em;opacity:1;transition:opacity .35s var(--ease);
 }
 .carousel-caption.is-fading{opacity:0}
 
@@ -228,17 +228,18 @@ h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-0.02em;l
 .flow-track{position:relative;width:100%;aspect-ratio:1200/130;margin-bottom:8px}
 .flow-line{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .flow-line path#flowPath{
-  fill:none;stroke:var(--mint);stroke-width:2.5;stroke-linecap:round;
-  stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 1.8s var(--ease);
+  fill:none;stroke:var(--white);stroke-width:2.2;stroke-linecap:round;
+  stroke-dasharray:2 10;
+  opacity:0;transition:opacity 1s var(--ease);
 }
-.flow-track.in .flow-line path#flowPath{stroke-dashoffset:0}
+.flow-track.in .flow-line path#flowPath{opacity:.85}
 
 .flow-pin{opacity:0;transform:scale(0);transform-origin:center;transform-box:fill-box}
 .flow-pin path{fill:var(--mint)}
 .flow-pin circle{fill:var(--ink-black)}
 .flow-track.in .flow-pin{
   animation:pin-drop .6s var(--ease) forwards;
-  animation-delay:calc(1.6s + var(--pd));
+  animation-delay:calc(.5s + var(--pd));
 }
 @keyframes pin-drop{
   0%{opacity:0;transform:scale(0) translateY(-6px)}
@@ -249,7 +250,7 @@ h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-0.02em;l
 .flow-dot{
   position:absolute;top:0;left:0;width:10px;height:10px;border-radius:50%;
   background:var(--mint);box-shadow:0 0 12px 3px rgba(0,230,118,.55);
-  transform:translate(-50%,-50%);opacity:0;transition:opacity .5s 1.8s;
+  transform:translate(-50%,-50%);opacity:0;transition:opacity .5s .6s;
   pointer-events:none;
 }
 .flow-track.in .flow-dot{opacity:1}
